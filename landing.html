@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infrasport</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .feature-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+    </style>
+</head>
+<body class="text-white">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-heartbeat me-2"></i>Infrasport
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login 🏃‍♂️ </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section - Closer to navbar -->
+    <section class="container pt-2">  <!-- Reduced top padding -->
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <h1 class="display-2 fw-bold mb-3">Take Control of Your Health Journey</h1>
+                <p class="lead mb-4">Track your fitness, monitor your nutrition, and achieve your health goals with Infrasport.</p>
+                <a href="login.html" class="btn btn-light btn-lg rounded-pill px-4 text-primary fw-bold">Get Started</a>
+            </div>
+            <div class="col-lg-5 mt-4 mt-lg-0">
+                <img src="assets/lari3.png" alt="Health Illustration" class="img-fluid">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="container py-5">
+        <h2 class="text-center mb-5">Why Choose Infrasport?</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="feature-card text-center p-4 rounded-3">
+                    <i class="fas fa-chart-line fs-1 mb-3"></i>
+                    <h3>Track Progress</h3>
+                    <p>Monitor your daily activities and see your progress over time with detailed analytics.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card text-center p-4 rounded-3">
+                    <i class="fas fa-utensils fs-1 mb-3"></i>
+                    <h3>Nutrition Tracking</h3>
+                    <p>Keep track of your meals and maintain a balanced diet with our nutrition tools.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card text-center p-4 rounded-3">
+                    <i class="fas fa-moon fs-1 mb-3"></i>
+                    <h3>Sleep Analysis</h3>
+                    <p>Understand your sleep patterns and improve your sleep quality with our sleep tracking.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
