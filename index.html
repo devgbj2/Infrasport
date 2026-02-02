@@ -1,326 +1,350 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infrasport</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-      .chart-container { height: 300px; }
-      .card { border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-      .navbar-brand { font-weight: 600; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infrasport</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="manifest" href="manifest.json">
+  <style>
+    .chart-container {
+      height: 300px;
+    }
+
+    .card {
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-brand {
+      font-weight: 600;
+    }
+  </style>
 </head>
+
 <body class="bg-light">
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container">
-            <a class="navbar-brand" href="#"><i class="fas fa-heartbeat me-2"></i>Infrasport</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto"> <!-- Menambahkan mx-auto untuk memusatkan Home dan User -->
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.html"> <i class="fas fa-home"></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="personal.html"><i class="fas fa-user"></i></a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav"> <!-- Ini tetap di kanan untuk dropdown -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-user-circle"></i>
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="profileDropdown">
-                            <li><a class="dropdown-item" href="#">Profile</a></li>
-                            <li><a class="dropdown-item" href="landing.html" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="#"><i class="fas fa-heartbeat me-2"></i>Infrasport</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto"> <!-- Menambahkan mx-auto untuk memusatkan Home dan User -->
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html"> <i class="fas fa-home"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="personal.html"><i class="fas fa-user"></i></a>
+          </li>
+        </ul>
+        <ul class="navbar-nav"> <!-- Ini tetap di kanan untuk dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <i class="fas fa-user-circle"></i>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="profileDropdown">
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><a class="dropdown-item" href="landing.html" id="logoutBtn"><i class="fas fa-sign-out-alt"></i>
+                  Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-    <!-- Main Content -->
-    <div class="container mt-4">
-        <!-- Welcome Section -->
-        <div class="row mb-2">
-            <div class="col">
-                <h4>Activity Monitoring</h4>
-                <p class="text-muted">Home</p>
-            </div>
-        </div>
-        <div class="row mb-4">
-            <div class="col-sm-12 mb-3 mb-sm-0">
-                <div class="card" style="min-height: 350px;">
-                    <div class="card-body">
-                        <h2 class="card-title"><i class="fas fa-running"></i> Sporters Activities Overview</h2>
-                        <p class="text-muted">Sporters Activities 2 Weeks</p>
-                
-                        <div class="row align-items-center">
-                            <!-- Info Summary -->
-                            <div class="col-md-4">
-                                <div class="mb-4 d-flex align-items-center">
-                                    <i class="fas fa-fire fa-2x text-primary"></i>
-                                    <div class="ms-3">
-                                        <div class="small text-muted">Total Calories</div>
-                                        <div class="h5">5,266 Cal</div>
-                                    </div>
-                                </div>
-                
-                                <div class="mb-4 d-flex align-items-center">
-                                    <i class="fas fa-shoe-prints fa-2x text-primary"></i>
-                                    <div class="ms-3">
-                                        <div class="small text-muted">Total Steps</div>
-                                        <div class="h5">148,014</div>
-                                    </div>
-                                </div>
-                
-                                <div class="mb-4 d-flex align-items-center">
-                                    <i class="fas fa-road fa-2x text-primary"></i>
-                                    <div class="ms-3">
-                                        <div class="small text-muted">Total Distance</div>
-                                        <div class="h5">104 KM</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Chart Area -->
-                            <div class="col-md-8">
-                                <div class="chart-container">
-                                    <canvas id="sportersChart"></canvas>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+  <!-- Main Content -->
+  <div class="container mt-4">
+    <!-- Welcome Section -->
+    <div class="row mb-2">
+      <div class="col">
+        <h4>Activity Monitoring</h4>
+        <p class="text-muted">Home</p>
+      </div>
+    </div>
+    <div class="row mb-4">
+      <div class="col-sm-12 mb-3 mb-sm-0">
+        <div class="card" style="min-height: 350px;">
+          <div class="card-body">
+            <h2 class="card-title"><i class="fas fa-running"></i> Sporters Activities Overview</h2>
+            <p class="text-muted">Sporters Activities 2 Weeks</p>
+
+            <div class="row align-items-center">
+              <!-- Info Summary -->
+              <div class="col-md-4">
+                <div class="mb-4 d-flex align-items-center">
+                  <i class="fas fa-fire fa-2x text-primary"></i>
+                  <div class="ms-3">
+                    <div class="small text-muted">Total Calories</div>
+                    <div class="h5">5,266 Cal</div>
+                  </div>
                 </div>
-            </div>
-        </div>
 
-                <!-- Card Group -->
-        <div class="row g-3">
+                <div class="mb-4 d-flex align-items-center">
+                  <i class="fas fa-shoe-prints fa-2x text-primary"></i>
+                  <div class="ms-3">
+                    <div class="small text-muted">Total Steps</div>
+                    <div class="h5">148,014</div>
+                  </div>
+                </div>
 
-            <!-- Top 10 Movers -->
-            <div class="col-md-4">
-              <div class="card p-3">
-                <h5><i class="fas fa-trophy text-primary"></i> Top 10 Movers</h5>
-                <p class="text-muted small">Top 10 Movers This Month</p>
-                <div class="chart-container">
-                  <canvas id="topMoversChart"></canvas> 
+                <div class="mb-4 d-flex align-items-center">
+                  <i class="fas fa-road fa-2x text-primary"></i>
+                  <div class="ms-3">
+                    <div class="small text-muted">Total Distance</div>
+                    <div class="h5">104 KM</div>
+                  </div>
                 </div>
               </div>
-            </div>
-        
-            <!-- Units Leaderboard -->
-            <div class="col-md-4">
-              <div class="card p-3">
-                <h5><i class="fas fa-chart-bar text-primary"></i> Units Leaderboard</h5>
-                <p class="text-muted small">Units Leaderboard This Month</p>
+              <!-- Chart Area -->
+              <div class="col-md-8">
                 <div class="chart-container">
-                  <canvas id="unitsLeaderboardChart"></canvas>
-                </div>
-              </div>
-            </div>
-        
-            <!-- Directorates Achievement -->
-            <div class="col-md-4">
-              <div class="card p-3">
-                <h5><i class="fas fa-chart-line text-primary"></i> Directorates Achievement</h5>
-                <p class="text-muted small">Moves Achievement This Month</p>
-                <div class="chart-container">
-                  <canvas id="directoratesChart"></canvas>
-                </div>
-              </div>
-            </div>
-        
-          </div>
-        
-          <div class="row g-3 mt-3 mb-4">
-            <div class="col-12">
-              <div class="card p-3">
-                <h5><i class="fas fa-bolt text-primary"></i> Latest Activity</h5>
-                <p class="text-muted small">Mover Latest Activity</p>
-                <div class="table-responsive table-scroll">
-                  <table class="table table-hover align-middle">
-                    <thead>
-                      <tr>
-                        <th>Strava User</th>
-                        <th>Steps</th>
-                        <th>Distance</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td class="d-flex align-items-center">
-                          <img src="https://i.pravatar.cc/40?img=3" class="user-avatar" style="width: 35px; height: 35px; border-radius: 50%;">
-                           Johan Eko Prasetio
-                        </td>
-                        <td>15,930 Steps</td>
-                        <td>11.15 KM</td>
-                      </tr>
-                      <tr>
-                        <td class="d-flex align-items-center">
-                            <img src="https://i.pravatar.cc/40?img=5" class="user-avatar" style="width: 35px; height: 35px; border-radius: 50%;">
-                            Yudhi Suryanto
-                        </td>
-                        <td>5,139 Steps</td>
-                        <td>3.6 KM</td>
-                      </tr>
-                      <!-- Tambahkan user lain di sini -->
-                    </tbody>
-                  </table>
+                  <canvas id="sportersChart"></canvas>
                 </div>
               </div>
             </div>
           </div>
-        <!-- Card Group -->
+        </div>
+      </div>
     </div>
 
-    <!-- Bootstrap JS Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Card Group -->
+    <div class="row g-3">
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Top 10 Movers Chart
-            new Chart(document.getElementById('topMoversChart'), {
-              type: 'bar',
-              data: {
-                labels: ['Johan Eko', 'Yudhi'],
-                datasets: [{
-                  label: 'Steps',
-                  data: [59300, 29100],
-                  backgroundColor: '#3b82f6'
-                }]
-              },
-              options: {
-                indexAxis: 'y',
-                plugins: {
-                  legend: { display: false }
-                },
-                scales: {
-                  x: {
-                    beginAtZero: true
-                  }
-                }
-              }
-            });
-          
-            // Units Leaderboard Chart
-            new Chart(document.getElementById('unitsLeaderboardChart'), {
-              type: 'bar',
-              data: {
-                labels: ['NETOPS', 'NSQ'],
-                datasets: [{
-                  label: 'Steps',
-                  data: [18000, 2000],
-                  backgroundColor: '#3b82f6'
-                }]
-              },
-              options: {
-                indexAxis: 'y',
-                plugins: {
-                  legend: { display: false }
-                },
-                scales: {
-                  x: {
-                    beginAtZero: true
-                  }
-                }
-              }
-            });
-          
-            // Directorates Achievement Chart
-            new Chart(document.getElementById('directoratesChart'), {
-              type: 'bar',
-              data: {
-                labels: ['NETOPS'],
-                datasets: [{
-                  label: 'Moves',
-                  data: [13000],
-                  backgroundColor: '#3b82f6'
-                }]
-              },
-              options: {
-                plugins: {
-                  legend: { display: false }
-                },
-                scales: {
-                  y: {
-                    beginAtZero: true
-                  }
-                }
-              }
-            });
-          });
-        // Wait for DOM to be fully loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            // Sporters Chart
-            const ctx = document.getElementById('sportersChart').getContext('2d');
-            const sportersChart = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: ['04-18', '04-20', '04-23', '04-24'],
-                    datasets: [{
-                        label: 'Steps',
-                        data: [3267, 93936, 34883, 15930],
-                        backgroundColor: '#3b82f6',
-                        borderColor: '#2563eb',
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            ticks: {
-                                callback: function(value) {
-                                    return value.toLocaleString();
-                                }
-                            }
-                        }
-                    },
-                    plugins: {
-                        legend: {
-                            display: false
-                        },
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    return context.parsed.y.toLocaleString() + ' steps';
-                                }
-                            }
-                        }
-                    }
-                }
-            });
+      <!-- Top 10 Movers -->
+      <div class="col-md-4">
+        <div class="card p-3">
+          <h5><i class="fas fa-trophy text-primary"></i> Top 10 Movers</h5>
+          <p class="text-muted small">Top 10 Movers This Month</p>
+          <div class="chart-container">
+            <canvas id="topMoversChart"></canvas>
+          </div>
+        </div>
+      </div>
 
-            // Check if user is logged in
-            if (!localStorage.getItem('isLoggedIn')) {
-                window.location.href = 'landing.html';
+      <!-- Units Leaderboard -->
+      <div class="col-md-4">
+        <div class="card p-3">
+          <h5><i class="fas fa-chart-bar text-primary"></i> Units Leaderboard</h5>
+          <p class="text-muted small">Units Leaderboard This Month</p>
+          <div class="chart-container">
+            <canvas id="unitsLeaderboardChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Directorates Achievement -->
+      <div class="col-md-4">
+        <div class="card p-3">
+          <h5><i class="fas fa-chart-line text-primary"></i> Directorates Achievement</h5>
+          <p class="text-muted small">Moves Achievement This Month</p>
+          <div class="chart-container">
+            <canvas id="directoratesChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row g-3 mt-3 mb-4">
+      <div class="col-12">
+        <div class="card p-3">
+          <h5><i class="fas fa-bolt text-primary"></i> Latest Activity</h5>
+          <p class="text-muted small">Mover Latest Activity</p>
+          <div class="table-responsive table-scroll">
+            <table class="table table-hover align-middle">
+              <thead>
+                <tr>
+                  <th>Strava User</th>
+                  <th>Steps</th>
+                  <th>Distance</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="d-flex align-items-center">
+                    <img src="https://i.pravatar.cc/40?img=3" class="user-avatar"
+                      style="width: 35px; height: 35px; border-radius: 50%;">
+                    Johan Eko Prasetio
+                  </td>
+                  <td>15,930 Steps</td>
+                  <td>11.15 KM</td>
+                </tr>
+                <tr>
+                  <td class="d-flex align-items-center">
+                    <img src="https://i.pravatar.cc/40?img=5" class="user-avatar"
+                      style="width: 35px; height: 35px; border-radius: 50%;">
+                    Yudhi Suryanto
+                  </td>
+                  <td>5,139 Steps</td>
+                  <td>3.6 KM</td>
+                </tr>
+                <!-- Tambahkan user lain di sini -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Card Group -->
+  </div>
+
+  <!-- Bootstrap JS Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log('SW registered'))
+        .catch(err => console.error('SW failed', err));
+    }
+    
+    document.addEventListener('DOMContentLoaded', function () {
+      // Top 10 Movers Chart
+      new Chart(document.getElementById('topMoversChart'), {
+        type: 'bar',
+        data: {
+          labels: ['Johan Eko', 'Yudhi'],
+          datasets: [{
+            label: 'Steps',
+            data: [59300, 29100],
+            backgroundColor: '#3b82f6'
+          }]
+        },
+        options: {
+          indexAxis: 'y',
+          plugins: {
+            legend: { display: false }
+          },
+          scales: {
+            x: {
+              beginAtZero: true
             }
+          }
+        }
+      });
 
-            // Display user's email
-            const userEmail = localStorage.getItem('userEmail');
-            if (userEmail) {
-                document.getElementById('userName').textContent = userEmail.split('@')[0];
+      // Units Leaderboard Chart
+      new Chart(document.getElementById('unitsLeaderboardChart'), {
+        type: 'bar',
+        data: {
+          labels: ['NETOPS', 'NSQ'],
+          datasets: [{
+            label: 'Steps',
+            data: [18000, 2000],
+            backgroundColor: '#3b82f6'
+          }]
+        },
+        options: {
+          indexAxis: 'y',
+          plugins: {
+            legend: { display: false }
+          },
+          scales: {
+            x: {
+              beginAtZero: true
             }
+          }
+        }
+      });
 
-            // Logout functionality
-            document.getElementById('logoutBtn').addEventListener('click', function() {
-                localStorage.removeItem('isLoggedIn');
-                localStorage.removeItem('userEmail');
-                window.location.href = 'login.html';
-            });
-        });
-    </script>
+      // Directorates Achievement Chart
+      new Chart(document.getElementById('directoratesChart'), {
+        type: 'bar',
+        data: {
+          labels: ['NETOPS'],
+          datasets: [{
+            label: 'Moves',
+            data: [13000],
+            backgroundColor: '#3b82f6'
+          }]
+        },
+        options: {
+          plugins: {
+            legend: { display: false }
+          },
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+    });
+    // Wait for DOM to be fully loaded
+    document.addEventListener('DOMContentLoaded', function () {
+      // Sporters Chart
+      const ctx = document.getElementById('sportersChart').getContext('2d');
+      const sportersChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['04-18', '04-20', '04-23', '04-24'],
+          datasets: [{
+            label: 'Steps',
+            data: [3267, 93936, 34883, 15930],
+            backgroundColor: '#3b82f6',
+            borderColor: '#2563eb',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            y: {
+              beginAtZero: true,
+              ticks: {
+                callback: function (value) {
+                  return value.toLocaleString();
+                }
+              }
+            }
+          },
+          plugins: {
+            legend: {
+              display: false
+            },
+            tooltip: {
+              callbacks: {
+                label: function (context) {
+                  return context.parsed.y.toLocaleString() + ' steps';
+                }
+              }
+            }
+          }
+        }
+      });
+
+      // Check if user is logged in
+      if (!localStorage.getItem('isLoggedIn')) {
+        window.location.href = 'landing.html';
+      }
+
+      // Display user's email
+      const userEmail = localStorage.getItem('userEmail');
+      if (userEmail) {
+        document.getElementById('userName').textContent = userEmail.split('@')[0];
+      }
+
+      // Logout functionality
+      document.getElementById('logoutBtn').addEventListener('click', function () {
+        localStorage.removeItem('isLoggedIn');
+        localStorage.removeItem('userEmail');
+        window.location.href = 'login.html';
+      });
+    });
+  </script>
 </body>
+
 </html>
