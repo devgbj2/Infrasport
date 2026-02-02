@@ -209,7 +209,7 @@
         .then(() => console.log('SW registered'))
         .catch(err => console.error('SW failed', err));
     }
-    
+
     document.addEventListener('DOMContentLoaded', function () {
       // Top 10 Movers Chart
       new Chart(document.getElementById('topMoversChart'), {
@@ -326,11 +326,6 @@
         }
       });
 
-      // Check if user is logged in
-      if (!localStorage.getItem('isLoggedIn')) {
-        window.location.href = 'landing.html';
-      }
-
       // Display user's email
       const userEmail = localStorage.getItem('userEmail');
       if (userEmail) {
@@ -339,8 +334,6 @@
 
       // Logout functionality
       document.getElementById('logoutBtn').addEventListener('click', function () {
-        localStorage.removeItem('isLoggedIn');
-        localStorage.removeItem('userEmail');
         window.location.href = 'login.html';
       });
     });
